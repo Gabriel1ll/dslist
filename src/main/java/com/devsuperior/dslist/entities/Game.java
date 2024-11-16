@@ -10,12 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 
-@Entity
-@Table(name = "tb_game")
+@Entity //configura para mesma estrutura do H2
+@Table(name = "tb_game") //table name
 public class Game {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id //id único
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //gerado sozinho
 	private Long id;
 	private String title;
 	
@@ -26,7 +26,7 @@ public class Game {
 	private Double score;
 	private String imgUrl;
 	
-	@Column(columnDefinition = "TEXT")
+	@Column(columnDefinition = "TEXT") // deixa ilimitado quantidade de caracter
 	private String shortDescription;
 	
 	@Column(columnDefinition = "TEXT")
